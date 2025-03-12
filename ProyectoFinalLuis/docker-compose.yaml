@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "777:777"
+    volumes:
+      - C:/Users/CEU/Documents/ProyectoLuis/ProyectoFinalLuis/html:/usr/share/nginx/html  # Ruta en Windows
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    driver: bridge
